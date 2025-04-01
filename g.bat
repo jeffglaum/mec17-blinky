@@ -1,0 +1,1 @@
+c:\r\test\probe-rs\target\debug\probe-rs.exe run --binary-format bin --base-address 0xc0000 .\target\thumbv7em-none-eabihf\debug\mec17-blinky.bin --chip-description-path MEC17xx.yaml --chip MEC1723N_B0_SZ
