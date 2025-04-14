@@ -422,6 +422,8 @@ variants:
       end: 0x40106000
     cores:
     - main
+  flash_algorithms:
+  - mec172x_512
 - name: MEC1723N_F0_SZ
   cores:
   - name: main
