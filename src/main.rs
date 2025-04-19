@@ -1,12 +1,11 @@
 #![no_std]
 #![no_main]
 
-use panic_halt as _; // you can put a breakpoint on `rust_begin_unwind` to catch panics
+use panic_halt as _;
 
 use cortex_m::peripheral::{syst, Peripherals};
 use cortex_m_rt::{entry, exception};
 use mec1723n_b0_sz;
-use rtt_target::{rprintln, rtt_init_print};
 
 const SYSTICK_PERIOD: u32 = 96_000_000;
 
@@ -23,10 +22,6 @@ fn initialize_systick() {
 
 #[entry]
 fn main() -> ! {
-
-    // Initialze RTT debug message interface.
-    rtt_init_print!();
-    rprintln!("INFO: Hello World");
 
     // Turn LED2 (GPIO 153) on.
     let g = unsafe {mec1723n_b0_sz::Gpio::steal()};

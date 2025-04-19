@@ -1,5 +1,5 @@
 [target.thumbv7em-none-eabihf]
-runner = 'probe-rs run --chip-description-path MEC17xx.yaml --chip MEC1723N_B0_SZ'
+runner = 'probe-rs run --chip MEC1723N_B0_SZ'
 
 rustflags = [
   "-C", "link-arg=-Tlink.x",

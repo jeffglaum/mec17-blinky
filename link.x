@@ -3,7 +3,6 @@ MEMORY
   CRAM (rwx) : ORIGIN = 0x000C0000, LENGTH = 352K
   DRAM       : ORIGIN = 0x00118000, LENGTH = 64K
   DRAM_ALIAS : ORIGIN = 0x20000000, LENGTH = 32K
-  /*FLASH : ORIGIN = 0x000C0000, LENGTH = 0*/
 }
 
 /* # Entry point = reset vector */
