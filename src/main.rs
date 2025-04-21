@@ -23,6 +23,15 @@ fn initialize_systick() {
 #[entry]
 fn main() -> ! {
 
+    // Globally enable interrupts.
+    unsafe {cortex_m::interrupt::enable();}
+
+    // Set the vector table address (aligned to link.x layout).
+    unsafe {
+        let peripherals = Peripherals::steal();
+        peripherals.SCB.vtor.write(0xc0000);
+    }
+
     // Turn LED2 (GPIO 153) on.
     let g = unsafe {mec1723n_b0_sz::Gpio::steal()};
     g.ctrl15(3).write(|w| unsafe {w.bits(0x0000_8200)});
